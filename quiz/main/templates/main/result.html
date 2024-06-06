@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Tab</title>
+</head>
+<body>
+    <h1><center> This is the result</center> </h1>
+    <div class="container">
+        <h4> <center> Total Marks obtained : {{ total_marks }}</center></h4>
+        {% for question, choice in question_choices %}
+            <h1>{{ forloop.counter }}. {{ question.question_text }}</h1>
+            <p>Options:</p>
+            <ul>
+                <li>{{ question.option1 }}</li>
+                <li>{{ question.option2 }}</li>
+                <li>{{ question.option3 }}</li>
+                <li>{{ question.option4 }}</li>
+            </ul>
+            <p>Right option: {{    question.right_option }}</p>
+            <p>Your Choice: {{ choice }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>
